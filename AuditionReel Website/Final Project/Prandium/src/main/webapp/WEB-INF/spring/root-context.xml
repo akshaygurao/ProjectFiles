@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="5000000" />
+		</bean>
+	
+		<bean id="userValidator" class="com.prandium.validator.UserValidator"></bean>
+		<bean id="userDao" class="com.prandium.dao.UserDAO" ></bean>
+		
+		<bean id="restaurantValidator" class="com.prandium.validator.RestaurantValidator"></bean>
+		<bean id="restaurantDao" class="com.prandium.dao.RestaurantDAO" ></bean>
+		
+		<bean id="messagesValidator" class="com.prandium.validator.MessagesValidator"></bean>
+		<bean id="messageDao" class="com.prandium.dao.MessageDAO"></bean>
+		
+</beans>
